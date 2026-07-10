@@ -1,0 +1,130 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+  color: #012537;
+  background: #012537;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding: 16px clamp(20px, 4vw, 64px);
+  background: #e4e4e4;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 24px);
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.brand__logo {
+  display: block;
+  width: clamp(112px, 13vw, 150px);
+  height: auto;
+}
+
+.brand__name {
+  padding-left: clamp(14px, 2vw, 24px);
+  border-left: 1px solid #82929b;
+  font-size: clamp(1.25rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: end;
+  height: calc(100vh - 80px);
+  height: calc(100svh - 80px);
+  overflow: hidden;
+  background: #012537;
+  color: #fff;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(1 37 55 / 86%) 0%,
+    rgb(1 37 55 / 35%) 45%,
+    rgb(1 37 55 / 8%) 75%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: clamp(32px, 7vw, 88px) clamp(20px, 4vw, 64px);
+}
+
+.hero__content p {
+  margin: 0 0 0.6rem;
+  color: #ffce34;
+  font-family: Georgia, serif;
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero__content h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    min-height: 72px;
+  }
+
+  .brand__name {
+    font-size: clamp(0.95rem, 4.5vw, 1.25rem);
+  }
+
+  .hero {
+    height: calc(100vh - 72px);
+    height: calc(100svh - 72px);
+  }
+
+  .hero__image {
+    object-position: 58% center;
+  }
+}
